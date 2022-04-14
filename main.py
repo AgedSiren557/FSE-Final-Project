@@ -1,13 +1,12 @@
-from fastapi import FastAPI
+from flask import Flask, render_template, request
 
-app = FastAPI()
-
-
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+app = Flask(__name__, static_folder='static')
 
 
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+
+if __name__ == '__main__':
+    app.run()

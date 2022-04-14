@@ -1,0 +1,15 @@
+header{
+    background-color: #FBD2D7;
+    justify-content: center;
+    padding: 2%;
+    border-bottom: 5px solid #666666;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 1vw;
+    text-align: center;
+
+}
+
+#h1_header{
+    color: #666666;
+    /*text-align: center;*/
+}

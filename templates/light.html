@@ -1,0 +1,21 @@
+{% extends 'index.html'%}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block content%}
+    {{super()}}
+    <div class="light_container">
+        <form action="{{url_for('light')}}" method="POST">
+            <div class="kitchen">
+                Kitchen
+                {{wtf.quick_form(kitchen)}}
+
+            </div>
+
+            <div class="lobby">
+                Lobby 
+                {{wtf.quick_form(lobby)}}
+            </div>
+            
+        </form>
+    </div>
+{% endblock%}

@@ -1,14 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% extends 'bootstrap/base.html' %}
+
+{% block head %}
+    {{super()}}
     <title>Smart Home - Start</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
-</head>
-<body>
-    <header>
-        <h1 id="h1_header">Sunflower Smart Home Management System</h1>
-    </header>
+{% endblock %}
 
-</body>
-</html>
+{% block body %}
+    {%block header%}
+        {% include "header.html"%}
+    {% endblock %}
+
+    {% block navbar %}
+        {% include 'navbar.html'%}
+    {% endblock %}
+
+    {% block content%}
+    {% endblock %}
+
+{% endblock %}

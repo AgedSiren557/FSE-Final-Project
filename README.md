@@ -2,7 +2,7 @@
 **Basic Concentrator of Smart Home**
 ## Team members
 1. Daniel A. Zarco Manzanares
-2. Octavio Contró
+2. Octavio González Alcalá
 3. Carlos Colín Cosme
 4. Cristian Otero
 ## Introduction

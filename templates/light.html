@@ -1,21 +1,37 @@
 {% extends 'index.html'%}
 {% import 'bootstrap/wtf.html' as wtf %}
 
+
 {% block content%}
     {{super()}}
     <div class="light_container">
         <form action="{{url_for('light')}}" method="POST">
             <div class="kitchen">
                 Kitchen
-                {{wtf.quick_form(kitchen)}}
-
-            </div>
-
-            <div class="lobby">
-                Lobby 
-                {{wtf.quick_form(lobby)}}
+                {{ form.kitchenLight0 }}
+                {{ form.kitchenLight20 }}
+                {{ form.kitchenLight40 }}
+                {{ form.kitchenLight60 }}
+                {{ form.kitchenLight80 }}
+                {{ form.kitchenLight100 }}
+            
+                Kitchen Light status: {{form.kitchenStatus}}
             </div>
             
+            <div class="lobby">
+                Lobby 
+                {{ form.loobyLight0 }}
+                {{ form.loobyLight20 }}
+                {{ form.loobyLight40 }}
+                {{ form.loobyLight60 }}
+                {{ form.loobyLight80 }}
+                {{ form.loobyLight100 }}
+            
+                Lobby Light status: {{form.loobyStatus}}
+                
+            </div>
         </form>
     </div>
 {% endblock%}
+
+

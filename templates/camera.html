@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+{% import 'bootstrap/wtf.html' as wf %}
+
+{% block content %}
+    {{ super() }}
+    <div class="camera-container">
+        <div class="camera">
+            <video id="camera1_video" width="320" height="240" loop autoplay muted controls>
+                <source src="{{ url_for('static', filename='/video/camera1.mp4') }}" type="video/mp4">
+            </video>
+        </div>
+        <div class="camera">
+            <video id="camera2_video" width="320" height="240" loop autoplay muted controls>
+                <source src="{{ url_for('static', filename='/video/camera2.mp4') }}" type="video/mp4">
+            </video>
+        </div>
+    </div>
+{% endblock %}

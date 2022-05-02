@@ -40,6 +40,29 @@ nav, a:visited{
     color: #F8F6F0;
     text-underline-mode: none;
 }
+.camera_container{
+    width: 80%;
+    height: 80%;
+    background-color: #FBD2D7;
+    border: 5px solid #666666;
+    border-radius: 10px;
+    margin: 10%;
+    text-align: center;
+    vertical-align: center;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.camera{
+    width: 98%;
+    margin: 1%;
+    border: 2px solid #666666;
+}
+.title_camera{
+    font-family: Montserrat, sans-serif;
+    font-size: large;
+    font-weight: bolder;
+    color: black;
+}
 
 
 

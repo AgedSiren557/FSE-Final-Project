@@ -3,15 +3,37 @@
 
 {% block content %}
     {{ super() }}
-    <div class="camera-container">
+    <div class="camera_container">
         <div class="camera">
-            <video id="camera1_video" width="320" height="240" loop autoplay muted controls>
+            <p class="title_camera">
+                Main door
+            </p>
+            <video class ="video_camera" id="camera1_video" loop autoplay muted >
                 <source src="{{ url_for('static', filename='/video/camera1.mp4') }}" type="video/mp4">
             </video>
         </div>
         <div class="camera">
-            <video id="camera2_video" width="320" height="240" loop autoplay muted controls>
+            <p class="title_camera">
+                Study room
+            </p>
+            <video class ="video_camera" id="camera2_video" loop autoplay muted >
                 <source src="{{ url_for('static', filename='/video/camera2.mp4') }}" type="video/mp4">
+            </video>
+        </div>
+        <div class="camera">
+            <p class="title_camera">
+                Back door
+            </p>
+            <video class ="video_camera" id="camera3_video" loop autoplay muted >
+                <source src="{{ url_for('static', filename='/video/camera3.mp4') }}" type="video/mp4">
+            </video>
+        </div>
+        <div class="camera">
+            <p class="title_camera">
+                Front garden
+            </p>
+            <video class ="video_camera" id="camera4_video" loop autoplay muted >
+                <source src="{{ url_for('static', filename='/video/camera4.mp4') }}" type="video/mp4">
             </video>
         </div>
     </div>

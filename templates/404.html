@@ -1,0 +1,11 @@
+{% extends 'index.html'%}
+
+{% block title %}
+{{super()}}
+404
+{% endblock %}
+
+{% block content%}
+    <h1>Error, can't find what you're searching</h1>
+    {{error}}
+{% endblock %}

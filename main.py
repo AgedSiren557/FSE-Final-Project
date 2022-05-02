@@ -1,30 +1,38 @@
 from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
-from wtforms import validators
+#from wtforms import validators
 from wtforms.fields import SubmitField
 
 app = Flask(__name__, static_folder='static')
 bootstrap = Bootstrap(app)
 app.config['SECRET_KEY'] = 'FSE_SECRET_KEY'
 
+@app.errorhandler(404)
+def not_found(error):
+    return render_template('404.html', error=error)
 
+   
 class LightForm(FlaskForm):
-    kitchenLight0 = SubmitField('Light off')
+    kitchenLightOn = SubmitField('Light on')
+    kitchenLightOff = SubmitField('Light off')
+    kitchenLight0 = SubmitField('0%')
     kitchenLight20 = SubmitField('20%')
     kitchenLight40 = SubmitField('40%')
     kitchenLight60 = SubmitField('60%')
     kitchenLight80 = SubmitField('80%')
     kitchenLight100 = SubmitField('100%')
-    kitchenStatus = 'Lightoff'
+    kitchenStatus = 'Light Off'
 
-    loobyLight0 = SubmitField('Light off')
+    lobbyLightOn = SubmitField('Light on')
+    lobbyLightOff = SubmitField('Light off')
+    loobyLight0 = SubmitField('0%')
     loobyLight20 = SubmitField('20%')
     loobyLight40 = SubmitField('40%')
     loobyLight60 = SubmitField('60%')
     loobyLight80 = SubmitField('80%')
     loobyLight100 = SubmitField('100%')
-    loobyStatus = 'Lightoff'
+    loobyStatus = 'Lightoff Off'
 
 
 @app.route('/')
@@ -41,7 +49,13 @@ def light():
     }
 
     if request.method=='POST' :
-        if (form.kitchenLight0.data):
+        if (form.kitchenLightOff.data):
+            LightForm.kitchenStatus = "Light Off"
+
+        elif (form.kitchenLightOn.data):
+            LightForm.kitchenStatus = "Light On"
+
+        elif (form.kitchenLight0.data):
             LightForm.kitchenStatus = "Light Off"
 
         elif(form.kitchenLight20.data):
@@ -57,8 +71,15 @@ def light():
             LightForm.kitchenStatus ="Light at 80%"
 
         elif(form.kitchenLight100.data):
-            LightForm.kitchenStatus ="Light at full power"
+            LightForm.kitchenStatus ="Light On"
+
         #lobby
+        elif (form.lobbyLightOff.data):
+            LightForm.loobyStatus = "Light Off"
+
+        elif (form.lobbyLightOn.data):
+            LightForm.loobyStatus = "Light On"
+
         elif (form.loobyLight0.data):
             LightForm.loobyStatus = "Light Off"
 
@@ -75,7 +96,7 @@ def light():
             LightForm.loobyStatus ="Light at 80%"
 
         elif(form.loobyLight100.data):
-            LightForm.loobyStatus ="Light at full power"
+            LightForm.loobyStatus ="Light On"
 
         return render_template('light.html', **context)
 

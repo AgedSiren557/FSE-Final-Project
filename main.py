@@ -8,6 +8,7 @@ app = Flask(__name__, static_folder='static')
 bootstrap = Bootstrap(app)
 app.config['SECRET_KEY'] = 'FSE_SECRET_KEY'
 
+
 class LightForm(FlaskForm):
     kitchenLight0 = SubmitField('Light off')
     kitchenLight20 = SubmitField('20%')
@@ -25,9 +26,11 @@ class LightForm(FlaskForm):
     loobyLight100 = SubmitField('100%')
     loobyStatus = 'Lightoff'
 
+
 @app.route('/')
 def home():
     return render_template('index.html')
+
 
 @app.route('/light',  methods=['GET', 'POST'])
 
@@ -78,6 +81,16 @@ def light():
 
     return render_template('light.html', **context)
 
+
+@app.route('/camera', methods = ['GET','POST'])
+def camera():
+    camera1 = LightForm()
+    camera2 = LightForm()
+    contex = {
+        'camera1': camera1,
+        'camera2': camera2,
+    }
+    return render_template('camera.html', **contex)
 
 
 if __name__ == '__main__':

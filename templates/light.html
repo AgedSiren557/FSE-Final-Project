@@ -6,34 +6,50 @@
     {{super()}}
     <div class="light_container">
         <form action="{{url_for('light')}}" method="POST">
-            <div class="kitchen">
-                Kitchen
-                {{ form.kitchenLightOn }}
-                {{ form.kitchenLightOff }}
-                {{ form.kitchenLight0 }}
-                {{ form.kitchenLight20 }}
-                {{ form.kitchenLight40 }}
-                {{ form.kitchenLight60 }}
-                {{ form.kitchenLight80 }}
-                {{ form.kitchenLight100 }}
-            
-                Kitchen Light status: {{form.kitchenStatus}}
-            </div>
-            
-            <div class="lobby">
-                Lobby 
-                {{ form.lobbyLightOn }}
-                {{ form.lobbyLightOff }}
-                {{ form.loobyLight0 }}
-                {{ form.loobyLight20 }}
-                {{ form.loobyLight40 }}
-                {{ form.loobyLight60 }}
-                {{ form.loobyLight80 }}
-                {{ form.loobyLight100 }}
-            
-                Lobby Light status: {{form.loobyStatus}}
+            <div class="light-container">
+                <div class="light">
+                    <div class="light-name">
+                        Kitchen
+                    </div>
+                    <div class="light-buttons">
+                        {{ form.kitchenLightOn }}
+                        {{ form.kitchenLightOff }}
+                        {{ form.kitchenLight0 }}
+                        {{ form.kitchenLight20 }}
+                        {{ form.kitchenLight40 }}
+                        {{ form.kitchenLight60 }}
+                        {{ form.kitchenLight80 }}
+                        {{ form.kitchenLight100 }}
+                    </div>
+                    
+                    <div class="light-status">
+                        Kitchen Light status: {{form.kitchenStatus}}
+                    </div>
+                </div>
                 
+                <div class="light">
+                    <div class="light-name">
+                        Lobby 
+                    </div>
+                    
+                    <div class="light-buttons">
+                        {{ form.lobbyLightOn }}
+                        {{ form.lobbyLightOff }}
+                        {{ form.loobyLight0 }}
+                        {{ form.loobyLight20 }}
+                        {{ form.loobyLight40 }}
+                        {{ form.loobyLight60 }}
+                        {{ form.loobyLight80 }}
+                        {{ form.loobyLight100 }}
+                    </div>
+                    
+                    <div class="light-status">
+                        Lobby Light status: {{form.loobyStatus}}
+                    </div>
+                    
+                </div>
             </div>
+           
         </form>
     </div>
 {% endblock%}

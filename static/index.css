@@ -64,5 +64,26 @@ nav, a:visited{
     color: black;
 }
 
+.light-container{
+    display: grid;
+    text-align: center;
+    border: 5px solid #666666;
+    border-radius: 10px;
+    background-color: #FBD2D7;
+    margin: 10% auto;
+    width: 75%;
+    height: 75%; 
+}
+
+.light {
+    display: grid;
+    grid-template-columns: 1fr 7fr 2fr;
+    width: 98%;
+    margin: 1%;
+    border: 2px solid #666666;
+    align-items: center;
+}
+
+
 
 

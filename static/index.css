@@ -63,6 +63,27 @@ nav, a:visited{
     font-weight: bolder;
     color: black;
 }
+.garage-container{
+    border: 5px solid #666666;
+    width: 80vw;
+    background-color: #FBD2D7;
+    margin: 5%;
+    padding: 5%;
+    text-align: center;
+    vertical-align: center;
+    align-items: center;
+}
+#door_p{
+    border: 2px solid #666666;
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
+    font-size: x-large;
+    color: #666666;
+    margin: 5%;
+    text-align: center;
+    align-self: center;
+}
+
 
 
 

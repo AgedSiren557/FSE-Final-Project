@@ -4,8 +4,30 @@
 {% block content %}
     {{ super() }}
     <div class="garage-container">
-    <p>Hello garage</p>
+        <form method="post">
+        <input type="range" min="0" max="6" value="6" step="1" class="door_bar" id="door_b">
+        <p id="door_p">
+            <span id="result_door"> Inactive </span>
+        </p>
+        </form>
 
+        <script>
+            let server = new XMLHttpRequest();
+            let valueBar;
+            let stateDoor = document.getElementById("door_b")
+            let spanText = document.getElementById("result_door")
+            stateDoor.oninput = function () {
+                valueBar = this.value
+                if(valueBar <= 0)
+                    spanText.textContent ="Close door"
+                else if(valueBar > 0 && valueBar < 6 )
+                    spanText.textContent = "Moving door"
+                else if(valueBar > 5)
+                    spanText.textContent = "Open door"
+            }
+            server.open("POST", '/garage')
+            server.send(valueBar)
+        </script>
     </div>
 
 {% endblock %}

@@ -133,5 +133,14 @@ def camera():
     return render_template('camera.html', **contex)
 
 
+@app.route('/garage', methods = ['GET', 'POST'])
+def garage():
+    garagedoor = LightForm()
+    context = {
+        'garagedoor': garagedoor,
+    }
+    return render_template('garage.html', **context)
+
+
 if __name__ == '__main__':
     app.run()

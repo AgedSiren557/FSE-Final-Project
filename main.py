@@ -3,6 +3,7 @@ from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
 #from wtforms import validators
 from wtforms.fields import SubmitField
+from yeelight import Bulb
 
 app = Flask(__name__, static_folder='static')
 bootstrap = Bootstrap(app)
@@ -34,6 +35,8 @@ class LightForm(FlaskForm):
     loobyLight100 = SubmitField('100%')
     loobyStatus = 'Lightoff Off'
 
+kitchenBulb = Bulb("192.168.0.13")
+lobbyBulb = Bulb("192.168.0.14")
 
 @app.route('/')
 def home():
@@ -51,52 +54,68 @@ def light():
     if request.method=='POST' :
         if (form.kitchenLightOff.data):
             LightForm.kitchenStatus = "Light Off"
+            kitchenBulb.turn_off()
 
         elif (form.kitchenLightOn.data):
             LightForm.kitchenStatus = "Light On"
+            kitchenBulb.turn_on()
 
         elif (form.kitchenLight0.data):
             LightForm.kitchenStatus = "Light Off"
+            kitchenBulb.set_brightness(0)
 
         elif(form.kitchenLight20.data):
             LightForm.kitchenStatus ="Light at 20%"
+            kitchenBulb.set_brightness(20)
 
         elif(form.kitchenLight40.data):
             LightForm.kitchenStatus ="Light at 40%"
+            kitchenBulb.set_brightness(40)
 
         elif(form.kitchenLight60.data):
             LightForm.kitchenStatus ="Light at 60%"
+            kitchenBulb.set_brightness(60)
 
         elif(form.kitchenLight80.data):
             LightForm.kitchenStatus ="Light at 80%"
+            kitchenBulb.set_brightness(80)
 
         elif(form.kitchenLight100.data):
             LightForm.kitchenStatus ="Light On"
+            kitchenBulb.set_brightness(100)
 
         #lobby
         elif (form.lobbyLightOff.data):
             LightForm.loobyStatus = "Light Off"
+            lobbyBulb.turn_off()
 
         elif (form.lobbyLightOn.data):
             LightForm.loobyStatus = "Light On"
+            lobbyBulb.turn_on()
 
         elif (form.loobyLight0.data):
             LightForm.loobyStatus = "Light Off"
+            lobbyBulb.set_brightness(0)
 
         elif(form.loobyLight20.data):
             LightForm.loobyStatus ="Light at 20%"
+            lobbyBulb.set_brightness(20)
 
         elif(form.loobyLight40.data):
             LightForm.loobyStatus ="Light at 40%"
+            lobbyBulb.set_brightness(40)
 
         elif(form.loobyLight60.data):
             LightForm.loobyStatus ="Light at 60%"
+            lobbyBulb.set_brightness(60)
 
         elif(form.loobyLight80.data):
             LightForm.loobyStatus ="Light at 80%"
+            lobbyBulb.set_brightness(80)
 
         elif(form.loobyLight100.data):
             LightForm.loobyStatus ="Light On"
+            lobbyBulb.set_brightness(100)
 
         return render_template('light.html', **context)
 

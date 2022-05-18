@@ -4,6 +4,7 @@ from flask_wtf import FlaskForm
 #from wtforms import validators
 from wtforms.fields import SubmitField
 from yeelight import Bulb
+from garagedoor_hardware import openDoor,closeDoor
 
 app = Flask(__name__, static_folder='static')
 bootstrap = Bootstrap(app)
@@ -132,6 +133,11 @@ def camera():
     }
     return render_template('camera.html', **contex)
 
+# functions to open and close door with two servomotors allocated into pins 12 and 13
+openDoor(12)
+openDoor(13)
+closeDoor(12)
+closeDoor(13)
 
 @app.route('/garage', methods = ['GET', 'POST'])
 def garage():

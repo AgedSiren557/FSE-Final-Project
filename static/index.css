@@ -53,7 +53,7 @@ nav, a:visited{
     grid-template-columns: 50% 50%;
 }
 .camera{
-    width: 98%;
+    width: 80%;
     margin: 1%;
     border: 2px solid #666666;
 }
@@ -115,7 +115,25 @@ nav, a:visited{
 }
 
 #fi_img{
-    height: 95%;
+    width: 90%;
+}
+@media screen and (max-device-width: 480px) and (orientation: portrait){
+    .camera_container{
+        width: 83%;
+        height: 80%;
+        background-color: #FBD2D7;
+        border: 5px solid #666666;
+        border-radius: 2px;
+        margin: 10%;
+        text-align: center;
+        vertical-align: center;
+        display: grid;
+        grid-template-columns: 50%;
+    }
+    .camera{
+    width: fit-content;
+    margin: 1%;
+}
 }
 
 

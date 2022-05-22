@@ -111,8 +111,12 @@ nav, a:visited{
     width: 96%;
     border: 5px solid #666666;
     background-color: #FBD2D7;
+    text-align: center;
 }
 
+#fi_img{
+    height: 95%;
+}
 
 
 

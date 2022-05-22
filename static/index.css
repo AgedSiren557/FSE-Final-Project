@@ -104,6 +104,14 @@ nav, a:visited{
     border: 2px solid #666666;
     align-items: center;
 }
+.container-home{
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 6%;
+    width: 96%;
+    border: 5px solid #666666;
+    background-color: #FBD2D7;
+}
 
 
 

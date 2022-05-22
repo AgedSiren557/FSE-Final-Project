@@ -118,6 +118,15 @@ nav, a:visited{
     width: 90%;
 }
 @media screen and (max-device-width: 480px) and (orientation: portrait){
+    .container-home{
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-top: 25%;
+        width: 96%;
+        border: 5px solid #666666;
+        background-color: #FBD2D7;
+        text-align: center;
+}
     .camera_container{
         width: 83%;
         height: 80%;

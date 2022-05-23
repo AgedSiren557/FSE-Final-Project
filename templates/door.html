@@ -5,7 +5,35 @@
     {{ super() }}   
 
     <p>
-        Door
+        
+        <div style="text-align: center">
+            <center> <font face="Times" color="black" size="15px"> <br/>  Main Door </font></center>    
+    
+        <br/>
+        <style type="text/css">
+            .boton_2{
+            
+              text-decoration: none;
+              padding: 40px;
+              font-family: arial;
+              text-transform: uppercase;
+              padding-left: 20px;
+              padding-right: 20px;
+              font-weight: 800;
+              font-size: 30px;
+              color: black;
+              background-color: #2fe62f;
+            }
+            .boton_2:hover{
+              color: #eb0e0e;
+              background-color: #00f7f7;
+              text-decoration: none;
+            }
+          </style>
+            
+            <button class="boton_2" onclick="javascript:alert('♫♫ THE DOORBELL IS RINGING ♫♫'); " > Doorbell 🔔 </button>
+            
+        </div>
     </p>
 
 {% endblock %}

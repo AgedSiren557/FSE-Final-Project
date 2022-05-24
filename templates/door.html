@@ -1,0 +1,61 @@
+{% extends 'index.html' %}
+{% import 'bootstrap/wtf.html' as wf %}
+
+{% block content %}
+    {{ super() }}   
+
+    <p>
+        
+        <div style="text-align: center">
+
+            <center> <br> <font face="Arial Black" color="black" size="5px"> <br/> ▲ Main Door ▲ </font></center>    
+            
+            <br/>
+        <button class="boton_2" onclick="myFunction()"> Doorbell 🔔 </button>
+
+
+        <script>
+            function myFunction() {
+                javascript:alert('\n ♫♫ THE DOORBELL IS RINGING ♫♫ \n ♫♫ THE DOORBELL IS RINGING ♫♫\n ♫♫ THE DOORBELL IS RINGING ♫♫'); 
+                
+            }
+            </script>
+
+<script>
+    window.setInterval (BlinkIt, 700);
+    var color = "red";
+    function BlinkIt () {
+    var blink = document.getElementById ("blink");
+    color = (color == "#ffffff")? "red" : "#ffffff";
+    blink.style.color = color;
+    blink.style.fontSize='15px';}
+    </script>
+    <div id="blink">◉Online </div>
+
+
+        <style type="text/css">
+            .boton_2{
+              border-radius: 50%;
+              text-decoration: none;
+              padding: 20px;
+              font-family: arial;
+              text-transform: uppercase;
+              padding-left: 20px;
+              padding-right: 20px;
+              font-weight: 800;
+              font-size: 30px;
+              color: black;
+              background-color: #f8acd9;
+            }
+            .boton_2:hover{
+              color: #eb0e0e;
+              background-color: #f5f111;
+              text-decoration: none;
+            }
+          </style>            
+
+           
+        </div>
+    </p>
+
+{% endblock %}

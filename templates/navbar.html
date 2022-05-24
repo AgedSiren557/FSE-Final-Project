@@ -1,9 +1,10 @@
-<nav>
+<nav> {#navbar section#}
     <ul>
-        <li><a href="{{url_for('home')}}">Home</a></li>
-        <li><a href="{{url_for('light')}}">Light</a></li>
-        <li><a href="{{url_for('camera')}}">Cameras</a></li>
-        <li><a href="{{ url_for('garage')}}">Garage Door</a></li>
-        <li><a href="{{ url_for('door')}}">Door bell</a></li>
+        {#loading all html documents for website and displa it on navbar section#}
+        <li><a href="{{url_for('home')}}">Home</a></li> {#loading home with flask function 'home'#}
+        <li><a href="{{url_for('light')}}">Light</a></li> {#loading light with flask function 'light'#}
+        <li><a href="{{url_for('camera')}}">Cameras</a></li> {#loading cameras with flask function 'camera'#}
+        <li><a href="{{ url_for('garage')}}">Garage Door</a></li> {#loading garage door with flask function 'garage'#}
+        <li><a href="{{ url_for('door')}}">Door bell</a></li> {#loading door bell with flask function 'door'#}
     </ul>
 </nav>

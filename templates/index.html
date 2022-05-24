@@ -1,6 +1,6 @@
 {% extends 'bootstrap/base.html' %}
 
-{% block style %}
+{% block style %} {#loading all styles for display on html files#}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
@@ -10,13 +10,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 {% endblock %}
 
-{% block head %}
+{% block head %} {#head block#}
     {{super()}}
     <title>Smart Home - Start</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
 {% endblock %}
 
-{% block body %}
+{% block body %} {#body block#}
+    {#loading all files for structure for web site#}
     {%block header%}
         {% include "header.html"%}
     {% endblock %}
@@ -25,9 +26,9 @@
         {% include 'navbar.html'%}
     {% endblock %}
 
-    {% block content%}
+    {% block content%} {#body block#}
         <div class="container-home">
-            <img id="fi_img" src="{{ url_for('static', filename="unam.jpg") }}">
+            <img id="fi_img" src="{{ url_for('static', filename="unam.jpg") }}"> {#setting image for index and for inherating#}
         </div>
     {% endblock %}
 

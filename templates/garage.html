@@ -1,22 +1,22 @@
-{% extends 'index.html' %}
-{% import 'bootstrap/wtf.html' as wf %}
+{% extends 'index.html' %} {#inherith from index#}
+{% import 'bootstrap/wtf.html' as wf %} {#boostrap web component#}
 
-{% block content %}
+{% block content %} {#block for html body#}
     {{ super() }}
-    <div class="garage-container">
-        <form method="post">
-        <input type="range" min="0" max="6" value="6" step="1" class="door_bar" id="door_b">
+    <div class="garage-container"> {#container for storage garage door slider#}
+        <form method="post"> {#defining POST methtod for update values#}
+        <input type="range" min="0" max="6" value="6" step="1" class="door_bar" id="door_b"> {#garage door slider#}
         <p id="door_p">
             <span id="result_door"> Inactive </span>
         </p>
         </form>
 
-        <script>
-            let server = new XMLHttpRequest();
+        <script> {#script for update garage door slider#}
+            let server = new XMLHttpRequest(); {#request server for update data#}
             let valueBar;
             let stateDoor = document.getElementById("door_b")
             let spanText = document.getElementById("result_door")
-            stateDoor.oninput = function () {
+            stateDoor.oninput = function () { {#validating state of slider and display state#}
                 valueBar = this.value
                 if(valueBar <= 0)
                     spanText.textContent ="Close door"
@@ -25,8 +25,8 @@
                 else if(valueBar > 5)
                     spanText.textContent = "Open door"
             }
-            server.open("POST", '/garage')
-            server.send(valueBar)
+            server.open("POST", '/garage') {#indicate changes and method for making open connection#}
+            server.send(valueBar) {#sending updating of value bar#}
         </script>
     </div>
 

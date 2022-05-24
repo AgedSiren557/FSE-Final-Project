@@ -4,7 +4,7 @@
 1. Daniel A. Zarco Manzanares
 2. Octavio González Alcalá
 3. Carlos Colín Cosme
-4. Cristian Otero
+4. Christian Otero García
 ## Introduction
 ## Requirements
 Basic concentrator that enable monitoring and management by

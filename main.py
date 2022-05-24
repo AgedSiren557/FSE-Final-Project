@@ -1,3 +1,5 @@
+#from crypt import methods
+from multiprocessing import context
 from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
@@ -131,6 +133,15 @@ def camera():
         'camera2': camera2,
     }
     return render_template('camera.html', **contex)
+
+
+@app.route('/door', methods = ['GET', 'POST'])
+def door():
+
+
+    door = LightForm()
+    context = {'door1': door}
+    return render_template('door.html', **context)
 
 
 if __name__ == '__main__':

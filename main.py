@@ -127,13 +127,17 @@ def light():
 
 @app.route('/camera', methods = ['GET','POST'])
 def camera():
-    camera1 = LightForm()
-    camera2 = LightForm()
-    contex = {
+    '''
+    unction for render the camera.html and load into server
+    :return: flask render of camera.html
+    '''
+    camera1 = LightForm() # creating a Lightform for camera 1 set load into server
+    camera2 = LightForm() # creating a Lightform for camera 2 set load into server
+    contex = { # context variables for camera.html into flask
         'camera1': camera1,
         'camera2': camera2,
     }
-    return render_template('camera.html', **contex)
+    return render_template('camera.html', **contex) # rendering camera.html
 
 # functions to open and close door with two servomotors allocated into pins 12 and 13
 openDoor(12)
@@ -143,11 +147,15 @@ closeDoor(13)
 
 @app.route('/garage', methods = ['GET', 'POST'])
 def garage():
-    garagedoor = LightForm()
+    '''
+    function for render the garage.html and load into server
+    :return: flask render of garage.html
+    '''
+    garagedoor = LightForm() # creating a Lightform for load into server
     context = {
-        'garagedoor': garagedoor,
+        'garagedoor': garagedoor, # context variables for garage.html into flask
     }
-    return render_template('garage.html', **context)
+    return render_template('garage.html', **context) # rendering garage.html
 
 
 @app.route('/door', methods = ['GET', 'POST'])
@@ -160,4 +168,4 @@ def door():
 
 
 if __name__ == '__main__':
-    app.run(host='192.168.1.65', port=5008, debug=True)
+    app.run(host='localhost', port=5008, debug=True)

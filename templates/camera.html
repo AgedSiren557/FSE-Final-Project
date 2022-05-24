@@ -1,38 +1,38 @@
-{% extends 'index.html' %}
-{% import 'bootstrap/wtf.html' as wf %}
+{% extends 'index.html' %} {#inherith from index#}
+{% import 'bootstrap/wtf.html' as wf %} {#boostrap web component#}
 
 {% block content %}
     {{ super() }}
-    <div class="camera_container">
+    <div class="camera_container"> {#crating camera container for cameras#}
         <div class="camera">
-            <p class="title_camera">
+            <p class="title_camera"> {#title for camera#}
                 Main door
             </p>
-            <video class ="video_camera" id="camera1_video" loop autoplay muted >
+            <video class ="video_camera" id="camera1_video" loop autoplay muted > {#display camera with options#}
                 <source src="{{ url_for('static', filename='/video/camera1.mp4') }}" type="video/mp4">
             </video>
         </div>
         <div class="camera">
-            <p class="title_camera">
+            <p class="title_camera"> {#title for camera#}
                 Study room
             </p>
-            <video class ="video_camera" id="camera2_video" loop autoplay muted >
+            <video class ="video_camera" id="camera2_video" loop autoplay muted > {#display camera with options#}
                 <source src="{{ url_for('static', filename='/video/camera2.mp4') }}" type="video/mp4">
             </video>
         </div>
-        <div class="camera">
+        <div class="camera"> {#title for camera#}
             <p class="title_camera">
                 Back door
             </p>
-            <video class ="video_camera" id="camera3_video" loop autoplay muted >
+            <video class ="video_camera" id="camera3_video" loop autoplay muted > {#display camera with options#}
                 <source src="{{ url_for('static', filename='/video/camera3.mp4') }}" type="video/mp4">
             </video>
         </div>
-        <div class="camera">
+        <div class="camera"> {#title for camera#}
             <p class="title_camera">
                 Front garden
             </p>
-            <video class ="video_camera" id="camera4_video" loop autoplay muted >
+            <video class ="video_camera" id="camera4_video" loop autoplay muted > {#display camera with options#}
                 <source src="{{ url_for('static', filename='/video/camera4.mp4') }}" type="video/mp4">
             </video>
         </div>

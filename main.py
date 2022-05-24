@@ -1,3 +1,14 @@
+# !/usr/bin/env python3
+# ## ###############################################
+# file: main.py
+# main file for flask server execution
+# Authors:
+# Daniel Alberto Zarco Manzanares
+# Octavio González Alcalá
+# Carlos Colín Cosme
+# Christian Otero García
+# ## ###############################################
+
 #from crypt import methods
 from multiprocessing import context
 from flask import Flask, render_template, request
@@ -14,7 +25,12 @@ app.config['SECRET_KEY'] = 'FSE_SECRET_KEY'
 
 @app.errorhandler(404)
 def not_found(error):
-    return render_template('404.html', error=error)
+    '''
+    defining the 404 error for load htmls that doesn't exist into server
+    :param error:
+    :return: rendering error
+    '''
+    return render_template('404.html', error=error) # rendering 404.html
 
    
 class LightForm(FlaskForm):
@@ -168,4 +184,5 @@ def door():
 
 
 if __name__ == '__main__':
+    # main function for execute flask app
     app.run(host='localhost', port=5008, debug=True)

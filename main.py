@@ -14,11 +14,11 @@ from multiprocessing import context
 from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
-#from wtforms import validators
 from wtforms.fields import SubmitField
 from yeelight import Bulb
 from garagedoor_hardware import openDoor,closeDoor
 
+#configuration needed for flask, boostrap and wtf.fields
 app = Flask(__name__, static_folder='static')
 bootstrap = Bootstrap(app)
 app.config['SECRET_KEY'] = 'FSE_SECRET_KEY'
@@ -32,8 +32,13 @@ def not_found(error):
     '''
     return render_template('404.html', error=error) # rendering 404.html
 
-   
+
 class LightForm(FlaskForm):
+    '''
+    defining LightForm class to use a Form
+    using flask_wtf and bootstrap for implematation
+    '''
+    #Kitchen light state and buttons
     kitchenLightOn = SubmitField('Light on')
     kitchenLightOff = SubmitField('Light off')
     kitchenLight0 = SubmitField('0%')
@@ -43,7 +48,7 @@ class LightForm(FlaskForm):
     kitchenLight80 = SubmitField('80%')
     kitchenLight100 = SubmitField('100%')
     kitchenStatus = 'Light Off'
-
+    #lobby light state and buttons
     lobbyLightOn = SubmitField('Light on')
     lobbyLightOff = SubmitField('Light off')
     loobyLight0 = SubmitField('0%')
@@ -54,6 +59,7 @@ class LightForm(FlaskForm):
     loobyLight100 = SubmitField('100%')
     loobyStatus = 'Lightoff Off'
 
+#configuration required for the conection with yeelight API
 kitchenBulb = Bulb("192.168.0.13")
 lobbyBulb = Bulb("192.168.0.14")
 
@@ -63,17 +69,25 @@ def home():
 
 
 @app.route('/light',  methods=['GET', 'POST'])
-
 def light():
-    form = LightForm()
-    context = {
-        'form': form,
+    '''
+    function for render the camera.html and load into server
+    :return: flask render of light.html
+    '''
+    form = LightForm()  #create the form
+    context = { # context variables for light.html into flask
+        'form': form,   
     }
 
     if request.method=='POST' :
-        if (form.kitchenLightOff.data):
-            LightForm.kitchenStatus = "Light Off"
-            kitchenBulb.turn_off()
+        '''
+        analize the form of the post, depending on the field selected
+        will call the API with the respective indication
+        and change the status of the light
+        '''
+        if (form.kitchenLightOff.data):     #check if ligh off of the kitchen was selected
+            LightForm.kitchenStatus = "Light Off"   #set the status of the ligh as off
+            kitchenBulb.turn_off()                  #using the API of yeelight to turn off the light
 
         elif (form.kitchenLightOn.data):
             LightForm.kitchenStatus = "Light On"
@@ -103,7 +117,7 @@ def light():
             LightForm.kitchenStatus ="Light On"
             kitchenBulb.set_brightness(100)
 
-        #lobby
+        #
         elif (form.lobbyLightOff.data):
             LightForm.loobyStatus = "Light Off"
             lobbyBulb.turn_off()
@@ -136,9 +150,11 @@ def light():
             LightForm.loobyStatus ="Light On"
             lobbyBulb.set_brightness(100)
 
+        #redirect to the same template, and send the form with the status cheange
         return render_template('light.html', **context)
 
-    return render_template('light.html', **context)
+    #render light template, and send the form created
+    return render_template('light.html', **context)    
 
 
 @app.route('/camera', methods = ['GET','POST'])
@@ -185,4 +201,5 @@ def door():
 
 if __name__ == '__main__':
     # main function for execute flask app
+    #change IP and port if needed
     app.run(host='localhost', port=5008, debug=True)

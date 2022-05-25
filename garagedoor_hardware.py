@@ -34,7 +34,7 @@ def openDoor(pin):
     :param pin: pin where servomotor is connected
     :return:
     '''
-    servomotor_setting_angle(0,pin)
+    servomotor_setting_angle(75,pin)
     return
 
 def closeDoor(pin):
@@ -43,6 +43,6 @@ def closeDoor(pin):
     :param pin: pin where servomotor is connected
     :return:
     '''
-    servomotor_setting_angle(75,pin)
+    servomotor_setting_angle(0,pin)
 
 

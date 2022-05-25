@@ -144,7 +144,7 @@ def light():
 @app.route('/camera', methods = ['GET','POST'])
 def camera():
     '''
-    unction for render the camera.html and load into server
+    function for render the camera.html and load into server
     :return: flask render of camera.html
     '''
     camera1 = LightForm() # creating a Lightform for camera 1 set load into server

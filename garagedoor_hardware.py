@@ -1,3 +1,13 @@
+# !/usr/bin/env python3
+# ## ###############################################
+# file: yeelight.py
+# file that simulate the API of yeelight
+# Authors:
+# Daniel Alberto Zarco Manzanares
+# Octavio González Alcalá
+# Carlos Colín Cosme
+# Christian Otero García
+# ## ###############################################
 from time import sleep
 
 import RPiVirtualBoard.RPi.GPIO as gpio

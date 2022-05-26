@@ -13,7 +13,7 @@ class Bulb:
     '''
     class that simulate the class bulb of yeelight
     '''
-    def __init__(self, ip=127.0.0.1):
+    def __init__(self, ip='127.0.0.1'):
         '''
         this constructor create a object Bulb with an ip
         :param ip: the ip of the bulb 

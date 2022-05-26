@@ -202,4 +202,4 @@ def door():
 if __name__ == '__main__':
     # main function for execute flask app
     #change IP and port if needed
-    app.run(host='localhost', port=5008, debug=True)
+    app.run(host='localhost', port=5000, debug=True)

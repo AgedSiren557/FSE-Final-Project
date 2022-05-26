@@ -5,15 +5,17 @@
     {{ super() }}   
 
     <p>
-        
+        <!-- Alineamos el texto al centro -->
         <div style="text-align: center">
-
+                <!-- Se le da formato como Fuente, color y tamaño -->
             <center> <br> <font face="Arial Black" color="black" size="5px"> <br/> ▲ Main Door ▲ </font></center>    
             
             <br/>
+            <!-- Se agrega el boton junto con la propiedad onclick para crear el evento -->
+            <!-- Va a recibir una función creada a continuación como parametro -->
         <button class="boton_2" onclick="myFunction()"> Doorbell 🔔 </button>
 
-
+          <!-- Se crea la función encargada de mandar la alerta en el javascript junto con el mensaje -->
         <script>
             function myFunction() {
                 javascript:alert('\n ♫♫ THE DOORBELL IS RINGING ♫♫ \n ♫♫ THE DOORBELL IS RINGING ♫♫\n ♫♫ THE DOORBELL IS RINGING ♫♫'); 
@@ -21,6 +23,7 @@
             }
             </script>
 
+<!-- Caracteristica de Parpadeo de alerta -->
 <script>
     window.setInterval (BlinkIt, 700);
     var color = "red";
@@ -32,10 +35,10 @@
     </script>
     <div id="blink">◉Online </div>
 
-
+      <!-- Se le da formato al boton del timbre, incluido forma, color, tamaño de bordes, fuente-->
         <style type="text/css">
             .boton_2{
-              border-radius: 50%;
+              border-radius: 50%; 
               text-decoration: none;
               padding: 20px;
               font-family: arial;
@@ -49,7 +52,7 @@
             }
             .boton_2:hover{
               color: #eb0e0e;
-              background-color: #f5f111;
+              background-color: #f7f31d;
               text-decoration: none;
             }
           </style>            

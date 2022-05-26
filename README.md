@@ -1,10 +1,10 @@
 # Fundamentals of Embedded Systems
 **Basic Concentrator of Smart Home**
 ## Team members
-1. Daniel A. Zarco Manzanares
-2. Octavio González Alcalá
-3. Carlos Colín Cosme
-4. Christian Otero García
+1. Zarco Manzanares Daniel A. 
+2. González Alcalá Octavio 
+3. Colín Cosme Carlos
+4. Otero García Christian
 ## Introduction
 ## Requirements
 Basic concentrator that enable monitoring and management by
